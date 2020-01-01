@@ -1,0 +1,1 @@
+# wyzblog-simple-theme
