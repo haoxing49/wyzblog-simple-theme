@@ -310,9 +310,9 @@ function aurelius_comment($comment, $args, $depth)
 		));
 		echo $pagination_links;
 	}
+	
 	//新建说说功能 
 	add_action('init', 'my_custom_init');
-
 	function my_custom_init()
 	{
 		$labels = array(
@@ -344,6 +344,6 @@ function aurelius_comment($comment, $args, $depth)
 			'menu_position' => null,
 			'supports' => array('title', 'editor', 'author')
 		);
-		register_post_type('shuoshuo', $args);
+		register_post_type('ShortNote', $args);
 	}
 ?>
