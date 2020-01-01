@@ -4,7 +4,7 @@ get_header();
 ?>
 
 <?php
-query_posts("post_type=shuoshuo & post_status=publish & posts_per_page=-1");
+query_posts("post_type=TalkAboutMood & post_status=publish & posts_per_page=-1");
 if (have_posts()) {
     while (have_posts()) {
         the_post(); ?>
@@ -14,9 +14,7 @@ if (have_posts()) {
                     <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
                     <div class="layui-timeline-content layui-text">
                         <h3 class="layui-timeline-title"><?php the_time('Y年n月j日G:i'); ?></h3>
-
                         <p>
-
                             <?php the_content(); ?></p>
                     </div>
                 </li>
