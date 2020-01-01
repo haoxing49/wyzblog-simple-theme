@@ -1,0 +1,527 @@
+/*
+Theme Name: wyzblog-simple-theme
+Theme URI: https://www.wyzblog.com
+Author: wyzblog
+Author URI: https://www.wyzblog.com
+Description: Simple WordPress blog theme.
+Version: 1.0
+Text Domain: ninja-shadow
+Tags: two-columns, right-sidebar, blog
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft Yahei", sans-serif;
+}
+
+a:hover {
+    color: #1E9FFF;
+    transition: all 0.3s;
+}
+
+body {
+    background: #f8f8f8;
+    font-family: "Consolas", "Microsoft JhengHei", "Apple LiGothic Medium,Microsoft YaHei", "微软雅黑", "Arial", sans-serif;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+    line-height: 1.5;
+}
+
+
+/* 头部 */
+
+.header {
+    border-bottom: 1px solid #e8e9e7;
+    background-color: rgba(255, 255, 255, 1);
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    position: absolute;
+    left: 10px;
+    top: 16px;
+    font-size: 1.4em;
+}
+
+.logo img {
+    width: 82px;
+    height: 31px;
+}
+
+.header .layui-nav {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0;
+    background: none;
+}
+
+.header .layui-nav .nav-icon i {
+    margin-right: 5px;
+}
+
+.header .layui-nav .layui-nav-item {
+    margin: 0 10px;
+}
+
+.header .layui-nav .layui-nav-item:after,
+.header .layui-nav .layui-nav-bar {
+    height: 1px;
+    background-color: #1E9FFF;
+}
+
+.header .layui-nav .layui-nav-item a {
+    color: #212220;
+    padding: 0 16px;
+}
+
+.header .layui-nav .layui-nav-item a:hover {
+    color: #1E9FFF;
+}
+
+.header .layui-nav .layui-nav-item[mobile] {
+    display: none;
+}
+
+.layui-container .main {
+    margin: 10px auto;
+}
+
+.layui-breadcrumb a:hover {
+    color: #1E9FFF !important;
+}
+
+
+/* 主页文章列表 */
+
+.list-card {
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.list-post:hover {
+    box-shadow: 2px 2px 5px 1px rgba(30, 159, 255, .3);
+    transition: all 0.5s;
+}
+
+.list-card .list-post-thumb {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    float: left;
+    text-align: center;
+    overflow: hidden;
+    margin-right: 25px;
+    border: 4px solid rgba(210, 210, 210, 0.2);
+    border-radius: 6px;
+}
+
+.list-card .list-post-thumb img {
+    max-width: 100%;
+    width: 150px;
+    height: 150px;
+}
+
+.list-card p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden
+}
+
+.list-post,
+.comments-content {
+    background: #fff;
+    overflow: hidden;
+    padding: 20px 20px 10px 20px;
+    position: relative
+}
+
+.list-post p {
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.list-post .list-post-content,
+.list-post h2,
+.single-post h1,
+.single-post p {
+    margin-bottom: 10px
+}
+
+.metacat {
+    position: absolute;
+    border-radius: 2px;
+    margin: 4px 4px 4px 4px;
+    padding: 6px;
+    width: auto;
+    height: auto;
+    text-align: center;
+    background-color: rgba(30, 130, 255, .7);
+}
+
+.metacat a {
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.single-post {
+    background: #fff;
+    overflow: hidden;
+    padding: 20px 20px 10px 20px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.list-post .list-post-content,
+.single-post span,
+.list-post-content span {
+    color: #999;
+    margin-right: 10px
+}
+
+.list-post .list-post-content,
+.single-post span a {
+    color: inherit
+}
+
+.list-post .list-post-content,
+.single-post span a:hover {
+    color: #1e9fff
+}
+
+.single-post-content p {
+    margin: 14px 0;
+    line-height: 30px;
+}
+
+.right-sidebar-children {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    overflow: hidden
+}
+
+.sidebar {
+    position: sticky;
+    top: 60px;
+}
+
+
+/* 搜索框 */
+
+.right-sidebar-children .layui-input {
+    width: 190px;
+    height: 30px;
+    padding-left: 12px;
+    font-size: 12px;
+}
+
+
+/* 最新文章 */
+
+.right-sidebar-children ul {
+    overflow: hidden
+}
+
+.right-sidebar-children ul li {
+    padding: 5px 10px
+}
+
+.right-sidebar-children ul span {
+    float: right;
+    color: #999
+}
+
+.right-sidebar-children ul i {
+    color: rgba(30, 159, 255, .8);
+    padding-right: 10px;
+}
+
+
+/* 自适应布局 */
+
+@media (min-width: 1200px) {}
+
+@media (max-width: 1200px) {
+    .layui-main {
+        width: 100%;
+    }
+    .right-sidebar-children .layui-input {
+        width: 140px;
+    }
+}
+
+@media (max-width: 992px) {
+    .layui-main {
+        width: 100%;
+    }
+    .right-sidebar-children .layui-input {
+        width: 82%;
+    }
+}
+
+.right-sidebar-title {
+    border-bottom: 1px solid rgba(30, 159, 255, .3);
+    width: 100%;
+    color: #666;
+    font-weight: 600;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.right-sidebar-title i {
+    color: #666;
+    margin: 5px
+}
+
+.right-sidebar-title h3 {
+    font-weight: 600
+}
+
+.sidebar_tag>a {
+    margin-right: 5px;
+}
+
+
+/* 评论 */
+
+.commentlist {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 20px 0 20px 0;
+}
+
+.comments-title {
+    margin: 0 0 20px 0;
+}
+
+.commentlist>li.comment {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin: 0 0 1.625em 77px;
+    padding: 1.3em;
+    position: relative;
+}
+
+.commentlist .pingback {
+    margin: 0 0 1.625em;
+    padding: 0 1.625em;
+}
+
+.commentlist .children {
+    list-style: none;
+    margin: 0;
+}
+
+.commentlist .children li.comment {
+    background: #fff;
+    border-left: 1px solid #ddd;
+    -moz-border-radius: 0 3px 3px 0;
+    border-radius: 0 3px 3px 0;
+    margin: 1.625em 0 0;
+    padding: 1.625em;
+    position: relative;
+}
+
+.commentlist .children li.comment a.comment-reply-link {
+    margin: 0 0 0 52px;
+}
+
+.children .bypostauthor>article {
+    border: 1px dashed #1E9FFF;
+}
+
+.commentlist .children li.comment>article {
+    padding: 10px;
+}
+
+.commentlist .children li.comment .fn {
+    display: block;
+}
+
+.comment-meta .fn {
+    font-style: normal;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.comment-meta {
+    color: #666;
+    font-size: 12px;
+    line-height: 2.2em;
+}
+
+.commentlist .children li.comment .comment-meta {
+    line-height: 1.625em;
+    margin-left: 50px;
+}
+
+.commentlist .children li.comment .comment-content {
+    margin: 0 0 0.5em 52px;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
+
+.comment-meta a {
+    font-size: 4px;
+    font-style: oblique;
+}
+
+.commentlist .avatar {
+    -moz-border-radius: 3px;
+    -webkit-box-shadow: 0 1px 2px #ccc;
+    -moz-box-shadow: 0 1px 2px #ccc;
+    box-shadow: 0 1px 2px #ccc;
+    left: -86px;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    border-radius: 50%;
+    border: 4px solid rgba(210, 210, 210, 0.2);
+}
+
+.commentlist>li:before {
+    content: url(assets/images/comment-arrow.png);
+    left: -21px;
+    position: absolute;
+}
+
+.commentlist>li>article .comment-content {
+    margin: 0 0 0.5em 0;
+}
+
+.commentlist>li.pingback:before {
+    content: '';
+}
+
+.commentlist .children .avatar {
+    background: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    left: 2.8em;
+    padding: 0;
+    top: 2.6em;
+    border-radius: 50%;
+    border: 4px solid rgba(210, 210, 210, 0.2);
+}
+
+a.comment-reply-link {
+    background: #eee;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    display: inline-block;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+a.comment-reply-link:hover,
+a.comment-reply-link:focus,
+a.comment-reply-link:active {
+    color: #fff;
+}
+
+a.comment-reply-link>span {
+    display: inline-block;
+    position: relative;
+    top: -1px;
+}
+
+#respond #cancel-comment-reply-link {
+    margin: 0 0 5px 5px;
+}
+
+.commentlist {
+    list-style: none;
+}
+
+.content .commentlist,
+.page-template-sidebar-page-php .commentlist {
+    width: 100%;
+}
+
+.commentlist>li.bypostauthor {
+    border-color: #d3d3d3;
+}
+
+.commentlist>li.bypostauthor .comment-meta {
+    color: #575757;
+}
+
+.commentlist>li.bypostauthor:before {
+    content: url(assets/images/comment-arrow.png);
+}
+
+.commentlist .children>li.bypostauthor {
+    border-color: #d3d3d3;
+}
+
+#respond {
+    background: #ffff;
+    padding: 20px;
+}
+
+
+/* 底部 */
+
+.footer {
+    background: #fff;
+    margin-top: 15px;
+    padding-top: 20px;
+    padding-bottom: 30px
+}
+
+.footer span {
+    color: #999
+}
+
+.footer .t-copy {
+    text-align: center;
+}
+
+
+/*
+首页文章分页
+*/
+
+.posts-nav {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.44);
+    padding: 10px 0;
+    background-color: #ffff;
+    text-align: center;
+}
+
+.posts-nav .page-numbers {
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    display: inline-block;
+    text-align: center;
+    width: 25px;
+    line-height: 25px;
+    margin: 0 5px;
+}
+
+.posts-nav .next,
+.posts-nav .prev {
+    width: auto;
+}
+
+.posts-nav .page-numbers.current,
+.posts-nav .page-numbers:not(.dots):hover {
+    background: #1E9FFF;
+    color: #fff;
+}
