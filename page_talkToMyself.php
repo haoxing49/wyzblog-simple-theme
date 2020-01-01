@@ -2,13 +2,13 @@
 /* Template Name: 说说/心情 */
 get_header();
 ?>
-
+<div class="layui-col-md9 layui-col-lg9 talkAboutMood">
 <?php
-query_posts("post_type=TalkAboutMood & post_status=publish & posts_per_page=-1");
+query_posts("post_type=TalkAboutMood&post_status=publish&posts_per_page=-1");
 if (have_posts()) {
     while (have_posts()) {
         the_post(); ?>
-        <div class="layui-col-md9 layui-col-lg9">
+        
             <ul class="layui-timeline">
                 <li class="layui-timeline-item">
                     <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
@@ -19,9 +19,9 @@ if (have_posts()) {
                     </div>
                 </li>
             </ul>
-        </div>
+        
 <?php }
 } ?>
+</div>
 <?php get_sidebar(); ?>
-</section>
 <?php get_footer(); ?>
