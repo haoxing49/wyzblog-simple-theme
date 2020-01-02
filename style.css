@@ -297,7 +297,6 @@ body {
 .commentlist {
     background-color: #ffffff;
     padding: 20px;
-    margin: 20px 0 20px 0;
 }
 
 .comments-title {
@@ -476,6 +475,8 @@ a.comment-reply-link>span {
 
 .talkAboutMood {
     background-color: #fff;
+    margin: 10px 0 0 0;
+    padding: 30px;
 }
 
 

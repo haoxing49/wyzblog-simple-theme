@@ -29,7 +29,6 @@
 	<script src="<?php bloginfo('template_url'); ?>/assets/layui/layui.js"></script>
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
-	<script src="<?php bloginfo('template_url'); ?>/assets/js/common.js"></script>	
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0 - 所有文章" href="<?php echo $feed; ?>" />
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0 - 所有评论" href="<?php bloginfo('comments_rss2_url'); ?>" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
@@ -63,7 +62,10 @@
 		<div class='layui-row layui-col-space15  main'>
 			<!-- Caption Line -->
 			<!-- 面包屑 -->
+			<?php if(!is_page()):?>
 			<div class="map">
-				<?php if(!is_page() && !is_home()): echo "当前位置："; endif;?>
+				<?php if (!is_page() && !is_home()) : echo "当前位置：";
+				endif; ?>
 				<span class="layui-breadcrumb" style="visibility: visible;"><?php echo breadcrumbs() ?></span>
 			</div>
+			<?php endif;?>
