@@ -61,11 +61,9 @@
 	<div class='layui-container'>
 		<div class='layui-row layui-col-space15  main'>
 			<!-- Caption Line -->
-			<!-- 面包屑 -->
-			<?php if(!is_page()):?>
+			<!-- 面包屑 -->			
 			<div class="map">
-				<?php if (!is_page() && !is_home()) : echo "当前位置：";
-				endif; ?>
-				<span class="layui-breadcrumb" style="visibility: visible;"><?php echo breadcrumbs() ?></span>
+				<?php if (!is_home()) : echo "当前位置：";endif; ?>
+				<span class="layui-breadcrumb" style="visibility: visible;"><?php echo breadcrumbs() ?></span>				
 			</div>
-			<?php endif;?>
+			

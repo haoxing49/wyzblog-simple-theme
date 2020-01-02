@@ -174,11 +174,14 @@ function aurelius_comment($comment, $args, $depth)
 
 	function breadcrumbs()
 	{
-		if (is_home() || is_page()) return false;
+		if (is_home()) return false;
 		if (is_category()) {
 			$category = '<cite>' . single_cat_title('', false) . '</cite>';
 			if (category_description()) $category = '<p>' . category_description() . '</p>';
 			// If this is a tag archive
+		} elseif (is_page()) {
+			$category = the_title('<span>', '</span>',false);			
+			// If this is a daily archive
 		} elseif (is_tag()) {
 			$category = '标签<a>' . single_tag_title('', false) . '</a>';
 			if (tag_description()) $category = '<p>' . tag_description() . '</p>';
@@ -200,7 +203,7 @@ function aurelius_comment($comment, $args, $depth)
 		} elseif (is_single()) {
 			$categorys = get_the_category();
 			$category = $categorys[0];
-			$category = get_category_parents($category->term_id, true, ' <span lay-separator="">/</span>') . get_the_title() . '</span><a><cite>正文</cite>';
+			$category = get_category_parents($category->term_id, true, ' <span lay-separator="">/</span>') . get_the_title() . '<cite>正文</cite>';			
 		}
 		return '<a href="' . get_bloginfo('url') . '">' . get_bloginfo('name') . '</a> <span lay-separator="">/</span> ' . $category;
 	}
