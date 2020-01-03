@@ -5,7 +5,7 @@
 <div class="layui-col-md9 layui-col-lg9">
 	<!-- Blog Post -->
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			<div class="list-post list-card">
+			<div class="list-post list-card layui-col-xs12">
 				<div class="metacat">
 					<?php
 					$category = get_the_category();

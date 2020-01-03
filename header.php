@@ -23,7 +23,8 @@
 				wp_title('', true);
 			} ?></title>
 	<!-- Stylesheets -->
-
+	<meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<script src="<?php bloginfo('template_url'); ?>/assets/js/jquery.min.js"></script>
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/layui/css/layui.css" type="text/css" />
 	<script src="<?php bloginfo('template_url'); ?>/assets/layui/layui.js"></script>
@@ -50,11 +51,12 @@
 					'menu_id'         => 'div_navigation',
 					'container' => 'false',
 					'theme_location' => '', //导航别名
-					'menu_class' => 'layui-nav', //引用layui-nav样式
+					'menu_class' => 'layui-nav layui-hide-xs', //引用layui-nav样式
 					'walker' => new new_walker(), //引用刚才的重构
 				));
 				?>
 			<?php endif; ?>
+
 		</div>
 	</div>
 	<span class="layui-nav-bar" style="width: 0px; left: 330px; opacity: 0; top: 59px;"></span>

@@ -9,7 +9,7 @@ if (post_password_required())
     <ol class="commentlist comment-list">
         <h3 class="comments-title">共&nbsp;<b><span class="commentCount"><?php echo number_format_i18n(get_comments_number()); ?></span></b> 条评论</h3>
         <?php
-        wp_list_comments(array('callback' => 'wyzblog_comment'));
+        wp_list_comments(array('callback' => 'wyzblog_comment_new'));
         ?>
     </ol>
     <nav class="navigation comment-navigation u-textAlignCenter" data-fuck="<?php the_ID(); ?>">
