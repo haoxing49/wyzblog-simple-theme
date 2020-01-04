@@ -1,7 +1,7 @@
 layui.use('util', function() {
     var util = layui.util;
     util.fixbar({
-        css: { right: 50, bottom: 100 }
+        css: { right: 15, bottom: 60 }
     });
 });
 layui.use('code', function() {
