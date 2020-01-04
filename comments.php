@@ -18,10 +18,8 @@ if (post_password_required())
     <div id='respond' class='comment-respond'>
         <?php if (comments_open()) : ?>
             <h3>发表评论
-                <?php comment_form_title('', '回复 %s'); ?>
-
+                <?php comment_form_title('', '回复 %s'); ?>               
                 <?php echo get_cancel_comment_reply_link_wyzblog('取消回复'); ?>
-
             </h3>
             <?php if (get_option('comment_registration') && !$user_ID) : ?>
                 <p>你必须 <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>">登陆</a> 后才能发表评论.</p>

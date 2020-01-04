@@ -189,11 +189,15 @@ function breadcrumbs()
 function wyzblog_comment_new($comment, $args)
 {
 	$GLOBALS['comment'] = $comment;
-	$isChildOrParent = "";
+	$is_child_or_parent = "";
+	$admin_badge = ""; //管理员徽章
 	if ($comment->comment_parent == 0) {
-		$isChildOrParent = ' comment-parent';
+		$is_child_or_parent = ' comment-parent';
 	} else {
-		$isChildOrParent = ' comment-child';
+		$is_child_or_parent = ' comment-child';
+	}
+	if (wyzblog_is_admin($comment->user_id)) {
+		$admin_badge = '  <span class="layui-badge layui-bg-orange">博主</span>';
 	}
 	switch ($comment->comment_type):
 		case 'pingback':
@@ -205,56 +209,49 @@ function wyzblog_comment_new($comment, $args)
 			break;
 		default:
 			?>
-			<li <?php comment_class($isChildOrParent); ?> id="li-comment-<?php comment_ID(); ?>">
-
-				<article id="comment-<?php comment_ID(); ?>" class="comment">
-					<footer class="comment-meta">
+			<li <?php comment_class($is_child_or_parent); ?> id="li-comment-<?php comment_ID(); ?>">
+				<div id="comment-<?php comment_ID(); ?>" class="comment">
+					<div class="comment-avator"><?php echo get_avatar($comment, '45'); ?></div>
+					<div class="comment-meta">
 						<div class="comment-author vcard">
 							<?php
-							$avatar_size = 50;
-							if ('0' != $comment->comment_parent) {
-								$avatar_size = 39;
-							}
-
-							echo get_avatar($comment, $avatar_size);
-
-							/* translators: 1: comment author, 2: date and time */
 							printf(
 								__('%1$s %2$s', 'wyzblog'),
-								sprintf('<span class="fn">%s</span>', get_comment_author_link()),
+								sprintf('<span class="fn"><b>%s</b>&nbsp;' . $admin_badge . '</span>', get_comment_author_link()),
 								sprintf(
 									'<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
 									esc_url(get_comment_link($comment->comment_ID)),
 									get_comment_time('c'),
 									/* translators: 1: date, 2: time */
-									sprintf(__('%1$s at %2$s', 'wyzblog'), get_comment_date(), get_comment_time())
+									sprintf(__('%1$s&nbsp;%2$s', 'wyzblog'), get_comment_date(), get_comment_time())
 								)
 							);
 							?>
-
 							<?php edit_comment_link(__('Edit', 'wyzblog'), '<span class="edit-link">', '</span>'); ?>
+							<div class="comment-content">
+								<b><?php echo getPermalinkFromCoid($comment->comment_parent); ?></b>
+								<?php comment_text(); ?>
+							</div>
+
+							<?php if ($comment->comment_approved == '0') : ?>
+								<em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.', 'wyzblog'); ?></em>
+								<br />
+							<?php endif; ?>
 						</div><!-- .comment-author .vcard -->
 
-						<?php if ($comment->comment_approved == '0') : ?>
-							<em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.', 'wyzblog'); ?></em>
-							<br />
-						<?php endif; ?>
-
-					</footer>
-					<div><b><?php echo getPermalinkFromCoid($comment->comment_parent); ?></b></div>
-					<div class="comment-content"><?php comment_text(); ?></div>
-					<div class="reply">
-						<?php
-						comment_reply_link(
-							array(
-								'reply_text' => __('<span class="layui-btn layui-btn-normal layui-btn-xs">回复</span>', 'wyzblog'),
-								'depth'        => isset($args['args']['depth']) ? $args['args']['depth'] : (int) 3,
-								'max_depth'    => isset($args['args']['max_depth']) ? $args['args']['max_depth'] : (int) 5
-							),
-							get_comment_ID()
-						);
-						?>
-					</div><!-- .reply -->
+						<div class="reply">
+							<?php
+							comment_reply_link(
+								array(
+									'reply_text' => __('<span class="layui-btn layui-btn-normal layui-btn-xs">回复</span>', 'wyzblog'),
+									'depth'        => isset($args['args']['depth']) ? $args['args']['depth'] : (int) 3,
+									'max_depth'    => isset($args['args']['max_depth']) ? $args['args']['max_depth'] : (int) 5
+								),
+								get_comment_ID()
+							);
+							?>
+						</div><!-- .reply -->
+					</div>
 			</li>
 
 <?php
@@ -344,4 +341,12 @@ function my_custom_init()
 	);
 	register_post_type('TalkAboutMood', $args);
 }
+
+function wyzblog_is_admin($user_id) {
+	$user = get_userdata($user_id);
+	if(!empty($user->roles) && in_array('administrator', $user->roles))
+	  return true;  // 是管理员
+	else
+	  return false;  // 非管理员
+  }
 ?>
