@@ -417,6 +417,18 @@ Tags: two-columns, right-sidebar, blog
         .layui-main {
             width: 100%;
         }
+        .nav-mobile-open {
+            display: block;
+        }
+        .nav-mobile-close {
+            display: none;
+        }
+        .layui-nav .layui-nav-item {
+            position: relative;
+            vertical-align: middle;
+            line-height: 60px;
+            display: inline;
+        }
         .right-sidebar-children .layui-input {
             width: 100%;
         }
@@ -455,7 +467,7 @@ Tags: two-columns, right-sidebar, blog
         .layui-nav .layui-nav-item {
             position: relative;
             vertical-align: middle;
-            line-height: 60px;
+            line-height: 50px;
             display: inline;
         }
     }
