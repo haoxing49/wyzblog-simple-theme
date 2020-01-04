@@ -60,13 +60,13 @@ register_nav_menus(
 #-----------------------------------------------------------------#
 # 修改wp_nav_menu的li标签
 #-----------------------------------------------------------------#
-class new_walker extends Walker_Nav_Menu
+class nav_new_walker extends Walker_Nav_Menu
 {
 	//修改一级ul标签样式
 	function start_lvl(&$output, $depth = 0, $args = array())
 	{
 		if ($depth == 0) {
-			$output .= '<ul class="layui-nav-child">';
+			$output .= '<ul class="layui-nav-parent">';
 		} else {
 			$output .= '<ul class="layui-nav-child">';
 		}
@@ -195,7 +195,7 @@ function wyzblog_comment_new($comment, $args)
 		$is_child_or_parent = ' comment-parent';
 	} else {
 		$is_child_or_parent = ' comment-child';
-	}
+	}	
 	if (wyzblog_is_admin($comment->user_id)) {
 		$admin_badge = '  <span class="layui-badge layui-bg-orange">博主</span>';
 	}

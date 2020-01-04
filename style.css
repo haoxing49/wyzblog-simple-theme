@@ -1,4 +1,4 @@
-/*
+    /*
 Theme Name: wyzblog-simple-theme
 Theme URI: https://www.wyzblog.com
 Author: wyzblog
@@ -8,433 +8,440 @@ Version: 1.0
 Text Domain: ninja-shadow
 Tags: two-columns, right-sidebar, blog
 */
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft Yahei", sans-serif;
-}
-
-a:hover {
-    color: #1E9FFF;
-    transition: all 0.3s;
-}
-
-body {
-    background: #f8f8f8;
-    font-family: "Consolas", "Microsoft JhengHei", "Apple LiGothic Medium,Microsoft YaHei", "微软雅黑", "Arial", sans-serif;
-    font-size: 14px;
-    -webkit-font-smoothing: antialiased;
-    -webkit-overflow-scrolling: touch;
-    line-height: 1.5;
-}
-
-
-/* 头部 */
-
-.header {
-    border-bottom: 1px solid #e8e9e7;
-    background-color: rgba(255, 255, 255, 1);
-    position: sticky;
-    top: 0;
-}
-
-.logo {
-    position: absolute;
-    left: 10px;
-    top: 16px;
-    font-size: 1.4em;
-}
-
-.logo img {
-    width: 82px;
-    height: 31px;
-}
-
-.header .layui-nav {
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 0;
-    background: none;
-}
-
-.header .layui-nav .nav-icon i {
-    margin-right: 5px;
-}
-
-.header .layui-nav .layui-nav-item {
-    margin: 0 10px;
-}
-
-.header .layui-nav .layui-nav-item:after,
-.header .layui-nav .layui-nav-bar {
-    height: 1px;
-    background-color: #1E9FFF;
-}
-
-.header .layui-nav .layui-nav-item a {
-    color: #212220;
-    padding: 0 16px;
-}
-
-.header .layui-nav .layui-nav-item a:hover {
-    color: #1E9FFF;
-}
-
-.header .layui-nav .layui-nav-item[mobile] {
-    display: none;
-}
-
-.layui-container .main {
-    margin: 10px auto;
-}
-
-.layui-breadcrumb a:hover {
-    color: #1E9FFF !important;
-}
-
-
-/* 主页文章列表 */
-
-.list-card {
-    border-radius: 6px;
-    margin-bottom: 20px;
-}
-
-.list-post:hover {
-    box-shadow: 2px 2px 5px 1px rgba(30, 159, 255, .3);
-    transition: all 0.5s;
-}
-
-.list-card .list-post-thumb {
-    width: 150px;
-    height: 150px;
-    line-height: 150px;
-    float: left;
-    text-align: center;
-    overflow: hidden;
-    margin-right: 25px;
-    border: 4px solid rgba(210, 210, 210, 0.5);
-    border-radius: 6px;
-}
-
-.list-card .list-post-thumb img {
-    max-width: 100%;
-    width: 150px;
-    height: 150px;
-}
-
-.list-card p {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden
-}
-
-.list-post,
-.comments-content {
-    background: #fff;
-    overflow: hidden;
-    padding: 20px 20px 10px 20px;
-    position: relative
-}
-
-.list-post p {
-    margin-bottom: 10px;
-    color: #666;
-}
-
-.list-post .list-post-content,
-.list-post h2,
-.single-post h1,
-.single-post p {
-    margin-bottom: 10px
-}
-
-.metacat {
-    position: absolute;
-    border-radius: 2px;
-    margin: 4px 4px 4px 4px;
-    padding: 6px;
-    width: auto;
-    height: auto;
-    text-align: center;
-    background-color: rgba(30, 130, 255, .7);
-}
-
-.metacat a {
-    color: #ffffff;
-    font-size: 12px;
-}
-
-.single-post {
-    background: #fff;
-    overflow: hidden;
-    padding: 20px 20px 10px 20px;
-    position: relative;
-    margin-bottom: 20px;
-}
-
-.list-post .list-post-content,
-.single-post span,
-.list-post-content span {
-    color: #999;
-    margin-right: 10px
-}
-
-.list-post .list-post-content,
-.single-post span a {
-    color: inherit
-}
-
-.list-post .list-post-content,
-.single-post span a:hover {
-    color: #1e9fff
-}
-
-.single-post-content p {
-    margin: 14px 0;
-    line-height: 30px;
-}
-
-.right-sidebar-children {
-    background: #fff;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 6px;
-    overflow: hidden
-}
-
-.sidebar {
-    position: sticky;
-    top: 60px;
-}
-
-
-/* 搜索框 */
-
-.right-sidebar-children .layui-input {
-    width: 190px;
-    height: 30px;
-    padding-left: 12px;
-    font-size: 12px;
-}
-
-
-/* 最新文章 */
-
-.right-sidebar-children ul {
-    overflow: hidden
-}
-
-.right-sidebar-children ul li {
-    padding: 5px 10px
-}
-
-.right-sidebar-children ul span {
-    float: right;
-    color: #999
-}
-
-.right-sidebar-children ul i {
-    color: rgba(30, 159, 255, .8);
-    padding-right: 10px;
-}
-
-.right-sidebar-title {
-    border-bottom: 1px solid rgba(30, 159, 255, .3);
-    width: 100%;
-    color: #666;
-    font-weight: 600;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    overflow: hidden;
-}
-
-.right-sidebar-title i {
-    color: #666;
-    margin: 5px
-}
-
-.right-sidebar-title h3 {
-    font-weight: 600
-}
-
-.sidebar_tag>a {
-    margin-right: 5px;
-}
-
-
-/* 评论列表*/
-
-.comment-list {
-    background-color: #ffffff;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.comment-list h3 {
-    margin-bottom: 20px;
-}
-
-.comment-list .comment-parent {
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    margin: 0 0 1.625em 0;
-    position: relative;
-}
-
-.comment-list>.children {
-    margin: 0 0 1.62em 4em;
-}
-
-.comment-list .comment-avator {
-    float: left;
-}
-
-.comment-list .comment-parent .comment-meta,
-.comment-list .children .comment-meta {
-    padding-top: 5px;
-    padding-left: 32px;
-    margin: 0 0 0 28px;
-    line-height: 20px;
-}
-
-.comment-list .children .comment-meta {
-    border-left: 1px solid #eee;
-}
-
-.comment-list .comment {
-    margin: 20px 0 20px 0;
-}
-
-.comment .comment-meta .comment-author>a {
-    display: block;
-}
-
-.comment-list .avatar {
-    -moz-border-radius: 3px;
-    -webkit-box-shadow: 0 1px 2px #ccc;
-    -moz-box-shadow: 0 1px 2px #ccc;
-    box-shadow: 0 1px 2px #ccc;
-    border-radius: 50%;
-    border: 4px solid rgba(210, 210, 210, 0.2);
-}
-
-.comment-list .comment-content p {
-    width: 90%;
-    margin: 5px 0 10px 0;
-}
-
-
-/*评论表单*/
-
-.comment-respond {
-    background-color: #ffff;
-    padding: 20px;
-}
-
-.comment-respond h3 {
-    margin-bottom: 20px;
-}
-
-.comment-list .comment-respond {
-    border: 1px solid rgba(210, 210, 210, 0.5);
-}
-
-.talkAboutMood {
-    background-color: #fff;
-    padding: 20px;
-}
-
-
-/* 底部 */
-
-.footer {
-    background: #fff;
-    margin-top: 15px;
-    padding-top: 20px;
-    padding-bottom: 30px
-}
-
-.footer span {
-    color: #999
-}
-
-.footer .t-copy {
-    text-align: center;
-}
-
-
-/*首页文章分页*/
-
-.posts-nav {
-    font-size: 14px;
-    color: rgba(0, 0, 0, 0.44);
-    padding: 10px 0;
-    background-color: #ffff;
-    text-align: center;
-}
-
-.posts-nav .page-numbers {
-    border-radius: 3px;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    display: inline-block;
-    text-align: center;
-    width: 25px;
-    line-height: 25px;
-    margin: 0 5px;
-}
-
-.posts-nav .next,
-.posts-nav .prev {
-    width: auto;
-}
-
-.posts-nav .page-numbers.current,
-.posts-nav .page-numbers:not(.dots):hover {
-    background: #1E9FFF;
-    color: #fff;
-}
-
-
-/* 自适应布局 */
-
-@media (min-width: 1200px) {}
-
-@media (max-width: 1200px) {
-    .layui-main {
-        width: 100%;
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft Yahei", sans-serif;
     }
-    .right-sidebar-children .layui-input {
-        width: 140px;
+    
+    a:hover {
+        color: #1E9FFF;
+        transition: all 0.3s;
     }
-}
-
-@media (min-width: 992px) {}
-
-@media (max-width: 992px) {
-    .layui-main {
-        width: 100%;
+    
+    body {
+        background: #f8f8f8;
+        font-family: "Consolas", "Microsoft JhengHei", "Apple LiGothic Medium,Microsoft YaHei", "微软雅黑", "Arial", sans-serif;
+        font-size: 14px;
+        -webkit-font-smoothing: antialiased;
+        -webkit-overflow-scrolling: touch;
+        line-height: 1.5;
     }
-    .right-sidebar-children .layui-input {
-        width: 82%;
+    /* 头部 */
+    
+    .header {
+        border-bottom: 1px solid #e8e9e7;
+        background-color: rgba(255, 255, 255, 1);
+        position: sticky;
+        top: 0;
     }
-}
-
-@media (min-width: 768px) {}
-
-@media (max-width: 768px) {
+    
+    .logo {
+        position: absolute;
+        left: 10px;
+        top: 16px;
+        font-size: 1.4em;
+    }
+    
+    .logo img {
+        width: 82px;
+        height: 31px;
+    }
+    
+    .header .layui-nav {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 0;
+        background: none;
+    }
+    
+    .layui-main .nav-mobile-icon {
+        position: absolute;
+        top: 16px;
+        right: 10px;
+        font-size: 1.5em;
+    }
+    
+    .header .layui-nav .nav-icon i {
+        margin-right: 5px;
+    }
+    
+    .header .layui-nav .layui-nav-item {
+        margin: 0 10px;
+    }
+    
+    .header .layui-nav .layui-nav-item:after,
+    .header .layui-nav .layui-nav-bar {
+        height: 1px;
+        background-color: #1E9FFF;
+    }
+    
+    .header .layui-nav .layui-nav-item a {
+        color: #212220;
+        padding: 0 16px;
+    }
+    
+    .header .layui-nav .layui-nav-item a:hover {
+        color: #1E9FFF;
+    }
+    
+    .header .layui-nav .layui-nav-item[mobile] {
+        display: none;
+    }
+    
+    .layui-container .main {
+        margin: 10px auto;
+    }
+    
+    .layui-breadcrumb a:hover {
+        color: #1E9FFF !important;
+    }
+    /* 主页文章列表 */
+    
+    .list-card {
+        border-radius: 6px;
+        margin-bottom: 20px;
+    }
+    
+    .list-post:hover {
+        box-shadow: 2px 2px 5px 1px rgba(30, 159, 255, .3);
+        transition: all 0.5s;
+    }
+    
     .list-card .list-post-thumb {
-        width: 100%;
-        height: 100%;
+        width: 150px;
+        height: 150px;
+        line-height: 150px;
+        float: left;
+        text-align: center;
+        overflow: hidden;
+        margin-right: 25px;
+        border: 4px solid rgba(210, 210, 210, 0.5);
+        border-radius: 6px;
     }
+    
     .list-card .list-post-thumb img {
-        width: 100%;
-        height: 100%;
+        max-width: 100%;
+        width: 150px;
+        height: 150px;
     }
-}
+    
+    .list-card p {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden
+    }
+    
+    .list-post,
+    .comments-content {
+        background: #fff;
+        overflow: hidden;
+        padding: 20px 20px 10px 20px;
+        position: relative
+    }
+    
+    .list-post p {
+        margin-bottom: 10px;
+        color: #666;
+    }
+    
+    .list-post .list-post-content,
+    .list-post h2,
+    .single-post h1,
+    .single-post p {
+        margin-bottom: 10px
+    }
+    
+    .metacat {
+        position: absolute;
+        border-radius: 2px;
+        margin: 4px 4px 4px 4px;
+        padding: 6px;
+        width: auto;
+        height: auto;
+        text-align: center;
+        background-color: rgba(30, 130, 255, .7);
+    }
+    
+    .metacat a {
+        color: #ffffff;
+        font-size: 12px;
+    }
+    
+    .single-post {
+        background: #fff;
+        overflow: hidden;
+        padding: 20px 20px 10px 20px;
+        position: relative;
+        margin-bottom: 20px;
+    }
+    
+    .list-post .list-post-content,
+    .single-post span,
+    .list-post-content span {
+        color: #999;
+        margin-right: 10px
+    }
+    
+    .list-post .list-post-content,
+    .single-post span a {
+        color: inherit
+    }
+    
+    .list-post .list-post-content,
+    .single-post span a:hover {
+        color: #1e9fff
+    }
+    
+    .single-post-content p {
+        margin: 14px 0;
+        line-height: 30px;
+    }
+    
+    .right-sidebar-children {
+        background: #fff;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 6px;
+        overflow: hidden
+    }
+    
+    .sidebar {
+        position: sticky;
+        top: 60px;
+    }
+    /* 搜索框 */
+    
+    .right-sidebar-children .layui-input {
+        width: 190px;
+        height: 30px;
+        padding-left: 12px;
+        font-size: 12px;
+    }
+    /* 最新文章 */
+    
+    .right-sidebar-children ul {
+        overflow: hidden
+    }
+    
+    .right-sidebar-children ul li {
+        padding: 5px 10px
+    }
+    
+    .right-sidebar-children ul span {
+        float: right;
+        color: #999
+    }
+    
+    .right-sidebar-children ul i {
+        color: rgba(30, 159, 255, .8);
+        padding-right: 10px;
+    }
+    
+    .right-sidebar-title {
+        border-bottom: 1px solid rgba(30, 159, 255, .3);
+        width: 100%;
+        color: #666;
+        font-weight: 600;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        overflow: hidden;
+    }
+    
+    .right-sidebar-title i {
+        color: #666;
+        margin: 5px
+    }
+    
+    .right-sidebar-title h3 {
+        font-weight: 600
+    }
+    
+    .sidebar_tag>a {
+        margin-right: 5px;
+    }
+    /* 评论列表*/
+    
+    .comment-list {
+        background-color: #ffffff;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .comment-list h3 {
+        margin-bottom: 20px;
+    }
+    
+    .comment-list .comment-parent {
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        margin: 0 0 1.625em 0;
+        position: relative;
+    }
+    
+    .comment-list>.children {
+        margin: 0 0 1.62em 4em;
+    }
+    
+    .comment-list .comment-avator {
+        float: left;
+    }
+    
+    .comment-list .comment-parent .comment-meta,
+    .comment-list .children .comment-meta {
+        padding-top: 5px;
+        padding-left: 32px;
+        margin: 0 0 0 28px;
+        line-height: 20px;
+    }
+    
+    .comment-list .children .comment-meta {
+        border-left: 1px solid #eee;
+    }
+    
+    .comment-list .comment {
+        margin: 20px 0 20px 0;
+    }
+    
+    .comment .comment-meta .comment-author>a {
+        display: block;
+    }
+    
+    .comment-list .avatar {
+        -moz-border-radius: 3px;
+        -webkit-box-shadow: 0 1px 2px #ccc;
+        -moz-box-shadow: 0 1px 2px #ccc;
+        box-shadow: 0 1px 2px #ccc;
+        border-radius: 50%;
+        border: 4px solid rgba(210, 210, 210, 0.2);
+    }
+    
+    .comment-list .comment-content p {
+        width: 90%;
+        margin: 5px 0 10px 0;
+    }
+    /*评论表单*/
+    
+    .comment-respond {
+        background-color: #ffff;
+        padding: 20px;
+    }
+    
+    .comment-respond h3 {
+        margin-bottom: 20px;
+    }
+    
+    .comment-list .comment-respond {
+        border: 1px solid rgba(210, 210, 210, 0.5);
+    }
+    
+    .talkAboutMood {
+        background-color: #fff;
+        padding: 20px;
+    }
+    /* 底部 */
+    
+    .footer {
+        background: #fff;
+        margin-top: 15px;
+        padding-top: 20px;
+        padding-bottom: 30px
+    }
+    
+    .footer span {
+        color: #999
+    }
+    
+    .footer .t-copy {
+        text-align: center;
+    }
+    /*首页文章分页*/
+    
+    .posts-nav {
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.44);
+        padding: 10px 0;
+        background-color: #ffff;
+        text-align: center;
+    }
+    
+    .posts-nav .page-numbers {
+        border-radius: 3px;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        display: inline-block;
+        text-align: center;
+        width: 25px;
+        line-height: 25px;
+        margin: 0 5px;
+    }
+    
+    .posts-nav .next,
+    .posts-nav .prev {
+        width: auto;
+    }
+    
+    .posts-nav .page-numbers.current,
+    .posts-nav .page-numbers:not(.dots):hover {
+        background: #1E9FFF;
+        color: #fff;
+    }
+    /* 自适应布局 */
+    
+    @media (min-width: 1200px) {}
+    
+    @media (max-width: 1200px) {
+        .layui-main {
+            width: 100%;
+        }
+        .right-sidebar-children .layui-input {
+            width: 140px;
+        }
+    }
+    
+    @media (min-width: 992px) {}
+    
+    @media (max-width: 992px) {
+        .layui-main {
+            width: 100%;
+        }
+        .right-sidebar-children .layui-input {
+            width: 82%;
+        }
+    }
+    
+    @media (min-width: 768px) {}
+    
+    @media (max-width: 768px) {
+        .list-card .list-post-thumb {
+            width: 100%;
+            height: 100%;
+        }
+        .list-card .list-post-thumb img {
+            width: 100%;
+            height: 100%;
+        }
+        .header .layui-nav {
+            background-color: #ffff;
+            position: absolute;
+            top: 60px;
+            display: none;
+        }
+        .nav-mobile-open {
+            display: block;
+        }
+        .nav-mobile-close {
+            display: none;
+        }
+        .layui-nav .layui-nav-item {
+            position: relative;
+            vertical-align: middle;
+            line-height: 60px;
+            display: inline;
+        }
+    }
