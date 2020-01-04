@@ -31,6 +31,10 @@ Tags: two-columns, right-sidebar, blog
         -webkit-overflow-scrolling: touch;
         line-height: 1.5;
     }
+    
+    .icon-home {
+        display: none !important;
+    }
     /* 头部 */
     
     .header {
@@ -407,6 +411,9 @@ Tags: two-columns, right-sidebar, blog
     @media (min-width: 992px) {}
     
     @media (max-width: 992px) {
+        .icon-home {
+            display: inline !important;
+        }
         .layui-main {
             width: 100%;
         }
@@ -422,6 +429,9 @@ Tags: two-columns, right-sidebar, blog
     @media (min-width: 768px) {}
     
     @media (max-width: 768px) {
+        .icon-home {
+            display: inline !important;
+        }
         .list-card .list-post-thumb {
             width: 100%;
             height: 100%;
