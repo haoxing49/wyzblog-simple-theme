@@ -411,7 +411,11 @@ Tags: two-columns, right-sidebar, blog
             width: 100%;
         }
         .right-sidebar-children .layui-input {
-            width: 82%;
+            width: 100%;
+        }
+        .right-sidebar-children .input {
+            width: 84%;
+            margin-right: 2px;
         }
     }
     

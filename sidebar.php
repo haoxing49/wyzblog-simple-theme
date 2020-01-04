@@ -40,7 +40,7 @@
 				$posts = get_posts('numberposts=6&orderby=post_date');
 				foreach ($posts as $post) {
 					setup_postdata($post);
-					echo '<li class="layui-col-md12 layui-col-xs6"><i class="layui-icon layui-icon-tree"></i><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
+					echo '<li class="layui-col-md12 layui-col-xs12"><i class="layui-icon layui-icon-tree"></i><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
 				}
 				$post = $posts[0];
 				?>
