@@ -395,16 +395,44 @@ Tags: two-columns, right-sidebar, blog
         background: #1E9FFF;
         color: #fff;
     }
+    
+    .layui-timeline-item img {
+        width: 95%;
+    }
     /* 自适应布局 */
     
     @media (min-width: 1200px) {}
     
     @media (max-width: 1200px) {
+        .icon-home {
+            display: inline !important;
+        }
         .layui-main {
             width: 100%;
         }
         .right-sidebar-children .layui-input {
             width: 140px;
+        }
+        .layui-main .nav-mobile-icon {
+            right: 20px;
+        }
+        .header .layui-nav {
+            background-color: #ffff;
+            position: absolute;
+            top: 60px;
+            display: none;
+        }
+        .nav-mobile-open {
+            display: block;
+        }
+        .nav-mobile-close {
+            display: none;
+        }
+        .layui-nav .layui-nav-item {
+            position: relative;
+            vertical-align: middle;
+            line-height: 60px;
+            display: inline;
         }
     }
     
@@ -417,6 +445,9 @@ Tags: two-columns, right-sidebar, blog
         .layui-main {
             width: 100%;
         }
+        .layui-main .nav-mobile-icon {
+            right: 20px;
+        }
         .nav-mobile-open {
             display: block;
         }
@@ -426,7 +457,7 @@ Tags: two-columns, right-sidebar, blog
         .layui-nav .layui-nav-item {
             position: relative;
             vertical-align: middle;
-            line-height: 60px;
+            line-height: 50px;
             display: inline;
         }
         .right-sidebar-children .layui-input {
@@ -451,6 +482,9 @@ Tags: two-columns, right-sidebar, blog
         .list-card .list-post-thumb img {
             width: 100%;
             height: 100%;
+        }
+        .layui-main .nav-mobile-icon {
+            right: 20px;
         }
         .header .layui-nav {
             background-color: #ffff;

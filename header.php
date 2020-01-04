@@ -29,7 +29,7 @@
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/layui/css/layui.css" type="text/css" />
 	<script src="<?php bloginfo('template_url'); ?>/assets/layui/layui.js"></script>
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />	
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0 - 所有文章" href="<?php echo $feed; ?>" />
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0 - 所有评论" href="<?php bloginfo('comments_rss2_url'); ?>" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
@@ -37,7 +37,6 @@
 	wp_head(); ?>
 </head>
 <?php flush(); ?>
-
 <body>
 	<div class='layui-header header'>
 		<div class='layui-main'>
@@ -45,7 +44,7 @@
 			<a class='logo' href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a>
 			<!-- Navigation Menu -->
 			<?php if(wp_is_mobile()){?>
-				<div class='nav-mobile-icon layui-hide-sm'>
+				<div class='nav-mobile-icon'>
 					<div class='nav-mobile-open' id='nav-mobile-open' lay-filter='nav-mobile-open'><i class="fa fa-bars" aria-hidden="true"></i></div>
 					<div class='nav-mobile-close' id='nav-mobile-close'><i class="fa fa-times" aria-hidden="true"></i></div>
 				</div>

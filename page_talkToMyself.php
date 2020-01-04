@@ -2,7 +2,7 @@
 /* Template Name: 说说/心情 */
 get_header();
 ?>
-<div class="layui-col-md9 layui-col-lg9">
+<div class="layui-col-md9 layui-col-lg9 layui-col-sm12 layui-col-xs12">
     <div class="talkAboutMood">
         <?php
         query_posts("post_type=TalkAboutMood&post_status=publish&posts_per_page=-1");
@@ -20,7 +20,6 @@ get_header();
                         </div>
                     </li>
                 </ul>
-
         <?php }
         } ?>
     </div>
