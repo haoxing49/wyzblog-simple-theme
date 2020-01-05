@@ -2,27 +2,27 @@
 /* Template Name: 说说/心情 */
 get_header();
 ?>
-<div class="layui-col-md9 layui-col-lg9 layui-col-sm12 layui-col-xs12">
-    <div class="talkAboutMood">
-        <?php
-        query_posts("post_type=TalkAboutMood&post_status=publish&posts_per_page=-1");
-        if (have_posts()) {
-            while (have_posts()) {
-                the_post(); ?>
+<meta charset="UTF-8">
+<section class="timeline">
+	<div class="container">
 
-                <ul class="layui-timeline">
-                    <li class="layui-timeline-item">
-                        <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
-                        <div class="layui-timeline-content layui-text">
-                            <h3 class="layui-timeline-title"><?php the_time('Y年n月j日G:i'); ?></h3>
-                            <p>
-                                <?php the_content(); ?></p>
-                        </div>
-                    </li>
-                </ul>
-        <?php }
-        } ?>
-    </div>
-    </div>
-    <?php get_sidebar(); ?>
-    <?php get_footer(); ?>
+		<?php
+		query_posts("post_type=TalkAboutMood&post_status=publish&posts_per_page=-1");
+		if (have_posts()) {
+			while (have_posts()) {
+				the_post(); ?>
+				<div class="timeline-item">
+					<div class="timeline-img"></div>					
+					<div class="timeline-content">					
+								
+						<div class="date"><?php the_time('Y年n月j日G:i'); ?></div>
+						<?php the_content(); ?>						
+					</div>
+				</div>
+		<?php }
+		} ?>
+
+	</div>
+</section>
+
+<?php get_footer(); ?>

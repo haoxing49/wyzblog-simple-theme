@@ -8,7 +8,7 @@
         </span>
     </div>
 </div>
-<script src="<?php bloginfo('template_url'); ?>/assets/js/common.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/js/common.js"></script>
 <?php wp_footer(); ?>
 </body>
 </html>

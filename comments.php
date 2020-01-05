@@ -12,13 +12,16 @@ if (post_password_required())
         wp_list_comments(array('callback' => 'wyzblog_comment_new'));
         ?>
     </ol>
-    <nav class="navigation comment-navigation u-textAlignCenter" data-fuck="<?php the_ID(); ?>">
-        <?php paginate_comments_links(array('prev_next' => true)); ?>
-    </nav>
+    <div class="layui-col-xs12 posts-nav">
+        <nav class="navigation comment-navigation u-textAlignCenter" data-fuck="<?php the_ID(); ?>">
+            <?php paginate_comments_links(array('prev_next' => true)); ?>
+        </nav>
+    </div>
+
     <div id='respond' class='comment-respond'>
         <?php if (comments_open()) : ?>
             <h3>发表评论
-                <?php comment_form_title('', '回复 %s'); ?>               
+                <?php comment_form_title('', '回复 %s'); ?>
                 <?php echo get_cancel_comment_reply_link_wyzblog('取消回复'); ?>
             </h3>
             <?php if (get_option('comment_registration') && !$user_ID) : ?>

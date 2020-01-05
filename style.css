@@ -41,6 +41,7 @@ Tags: two-columns, right-sidebar, blog
         border-bottom: 1px solid #e8e9e7;
         background-color: rgba(255, 255, 255, 1);
         position: sticky;
+        position: -webkit-sticky;
         top: 0;
     }
     
@@ -110,6 +111,7 @@ Tags: two-columns, right-sidebar, blog
     .list-card {
         border-radius: 6px;
         margin-bottom: 20px;
+        background-color: #ffff;
     }
     
     .list-post:hover {
@@ -144,10 +146,8 @@ Tags: two-columns, right-sidebar, blog
     
     .list-post,
     .comments-content {
-        background: #fff;
         overflow: hidden;
         padding: 20px 20px 10px 20px;
-        position: relative
     }
     
     .list-post p {
@@ -218,6 +218,7 @@ Tags: two-columns, right-sidebar, blog
     
     .sidebar {
         position: sticky;
+        position: -webkit-sticky;
         top: 60px;
     }
     /* 搜索框 */
@@ -272,6 +273,15 @@ Tags: two-columns, right-sidebar, blog
     }
     /* 评论列表*/
     
+    .page-comment-gif {
+        margin-bottom: 20px;
+    }
+    
+    .page-comment-gif img {
+        width: 100%;
+        height: 100%;
+    }
+    
     .comment-list {
         background-color: #ffffff;
         padding: 20px;
@@ -287,6 +297,7 @@ Tags: two-columns, right-sidebar, blog
         border-radius: 3px;
         margin: 0 0 1.625em 0;
         position: relative;
+        border-top: 1px solid rgba(210, 210, 210, 0.3);
     }
     
     .comment-list>.children {
@@ -307,6 +318,10 @@ Tags: two-columns, right-sidebar, blog
     
     .comment-list .children .comment-meta {
         border-left: 1px solid #eee;
+    }
+    
+    .comment-list .children .comment-author-wyzblog .fn>b {
+        color: #FF5722;
     }
     
     .comment-list .comment {
@@ -344,11 +359,6 @@ Tags: two-columns, right-sidebar, blog
     .comment-list .comment-respond {
         border: 1px solid rgba(210, 210, 210, 0.5);
     }
-    
-    .talkAboutMood {
-        background-color: #fff;
-        padding: 20px;
-    }
     /* 底部 */
     
     .footer {
@@ -371,8 +381,8 @@ Tags: two-columns, right-sidebar, blog
         font-size: 14px;
         color: rgba(0, 0, 0, 0.44);
         padding: 10px 0;
-        background-color: #ffff;
         text-align: center;
+        background-color: #ffffff;
     }
     
     .posts-nav .page-numbers {
@@ -482,6 +492,9 @@ Tags: two-columns, right-sidebar, blog
         .list-card .list-post-thumb img {
             width: 100%;
             height: 100%;
+        }
+        .post-comment-count {
+            display: none;
         }
         .layui-main .nav-mobile-icon {
             right: 20px;

@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <!-- Column 1 /Content -->
 <div class="layui-col-md9 layui-col-lg9">
-	<div class="sorting" style="display: none" >
+	<div class="sorting" style="display: none">
 		<h2>当前浏览<?php
 				// If this is a category archive
 				if (is_category()) {
@@ -33,14 +33,14 @@
 					echo '博客存档';
 				}
 				?>
-				<div class="sort_by">
-			<h2 style="display: none">排序</h2>
-			<ul style="display: none">
-				<li><a <?php if (isset($_GET['order']) && ($_GET['order'] == 'rand')) echo 'class="current"'; ?> href="<?php the_permalink(); ?> . '?' . http_build_query(array_merge($_GET, array('order' => 'rand'))); ?>">随机阅读</a></li>
-				<li><a <?php if (isset($_GET['order']) && ($_GET['order'] == 'commented')) echo 'class="current"'; ?> href="<?php the_permalink(); ?> . '?' . http_build_query(array_merge($_GET, array('order' => 'commented'))); ?>">评论最多</a></li>
-				<li><a <?php if (isset($_GET['order']) && ($_GET['order'] == 'alpha')) echo 'class="current"'; ?> href="<?php the_permalink(); ?> . '?' . http_build_query(array_merge($_GET, array('order' => 'alpha'))); ?>">标题排序</a></li>
-			</ul>
-		</div>
+			<div class="sort_by">
+				<h2 style="display: none">排序</h2>
+				<ul style="display: none">
+					<li><a <?php if (isset($_GET['order']) && ($_GET['order'] == 'rand')) echo 'class="current"'; ?> href="<?php the_permalink(); ?> . '?' . http_build_query(array_merge($_GET, array('order' => 'rand'))); ?>">随机阅读</a></li>
+					<li><a <?php if (isset($_GET['order']) && ($_GET['order'] == 'commented')) echo 'class="current"'; ?> href="<?php the_permalink(); ?> . '?' . http_build_query(array_merge($_GET, array('order' => 'commented'))); ?>">评论最多</a></li>
+					<li><a <?php if (isset($_GET['order']) && ($_GET['order'] == 'alpha')) echo 'class="current"'; ?> href="<?php the_permalink(); ?> . '?' . http_build_query(array_merge($_GET, array('order' => 'alpha'))); ?>">标题排序</a></li>
+				</ul>
+			</div>
 	</div>
 
 
@@ -90,7 +90,7 @@
 			<!-- Blog Post -->
 
 			<div class="list-post list-card layui-col-xs12">
-			<div class="metacat">
+				<div class="metacat">
 					<?php
 					$category = get_the_category();
 					if ($category[0]) {
@@ -98,8 +98,15 @@
 					}
 					?>
 				</div>
-				<div class="list-post-thumb"><a href=""><img src="<?php bloginfo('template_url'); ?>/assets/images/thumb.png" alt="" class="img-full"></a></div>
-
+				<div class="list-post-thumb">
+					<a href="">
+						<?php if (is_has_image()) { ?>
+							<img src="<?php echo catch_that_image(); ?>" alt="" class="img-full">
+						<?php } else { ?>
+							<img src="<?php bloginfo('template_url'); ?>/images/thumb/img<?php echo rand(1, 5) ?>.jpg" alt="" class="img-full">
+						<?php } ?>
+					</a>
+				</div>
 				<!-- Post Title -->
 				<h3 class="list-post-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
 				<!-- Post Data -->
@@ -111,19 +118,17 @@
 						</a>
 					</div>
 					<p class="post_data">
-						<span><i class='layui-icon layui-icon-note'></i>
-							<?php
-							the_tags('');
-							?>
+						<span class='post-tags'><i class='layui-icon layui-icon-note'></i>
+							<?php the_tags(''); ?>
 						</span>
-						<!-- <?php the_tags('标签：', ', ', ''); ?>  -->
-						<span>
+
+						<span class='post-date'>
 							<i class='layui-icon layui-icon-date'></i> <?php the_time('Y年n月j日') ?>
 						</span>
-						<span>
+						<span class='post-comment-count'>
 							<i class='layui-icon layui-icon-dialogue'></i> <?php comments_popup_link('0', '1', '%', '', '评论已关闭'); ?>
 						</span>
-						<span>
+						<span class='post-edit-link'>
 							<?php edit_post_link('编辑', ' <i class="layui-icon layui-icon-edit"></i> ', ''); ?>
 						</span>
 					</p>

@@ -25,11 +25,12 @@
 	<!-- Stylesheets -->
 	<meta name="renderer" content="webkit">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<script src="<?php bloginfo('template_url'); ?>/assets/js/jquery.min.js"></script>
+	<script src="<?php bloginfo('template_url'); ?>/js/jquery.min.js"></script>
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/layui/css/layui.css" type="text/css" />
 	<script src="<?php bloginfo('template_url'); ?>/assets/layui/layui.js"></script>
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />	
+	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/talk.css" type="text/css" />
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0 - 所有文章" href="<?php echo $feed; ?>" />
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0 - 所有评论" href="<?php bloginfo('comments_rss2_url'); ?>" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
@@ -38,6 +39,21 @@
 </head>
 <?php flush(); ?>
 <body>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 	<div class='layui-header header'>
 		<div class='layui-main'>
 			<!-- Text Logo -->

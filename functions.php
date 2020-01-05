@@ -195,7 +195,7 @@ function wyzblog_comment_new($comment, $args)
 		$is_child_or_parent = ' comment-parent';
 	} else {
 		$is_child_or_parent = ' comment-child';
-	}	
+	}
 	if (wyzblog_is_admin($comment->user_id)) {
 		$admin_badge = '  <span class="layui-badge layui-bg-orange">博主</span>';
 	}
@@ -342,11 +342,44 @@ function my_custom_init()
 	register_post_type('TalkAboutMood', $args);
 }
 
-function wyzblog_is_admin($user_id) {
+function wyzblog_is_admin($user_id)
+{
 	$user = get_userdata($user_id);
-	if(!empty($user->roles) && in_array('administrator', $user->roles))
-	  return true;  // 是管理员
+	if (!empty($user->roles) && in_array('administrator', $user->roles))
+		return true;  // 是管理员
 	else
-	  return false;  // 非管理员
-  }
+		return false;  // 非管理员
+}
+/**
+ *判断文章中是否有图片
+ */
+function is_has_image()
+{
+	global $post;
+	// 判断该文章是否设置的缩略图，如果有则直接显示
+	if (has_post_thumbnail()) {
+		echo the_post_thumbnail();
+	} else { //如果文章没有设置缩略图，则查找文章内是否包含图片
+		$content = $post->post_content;
+		preg_match_all('/<img.*?(?: |\\t|\\r|\\n)?src=[\'"]?(.+?)[\'"]?(?:(?: |\\t|\\r|\\n)+.*?)?>/sim', $content, $strResult, PREG_PATTERN_ORDER);
+		$n = count($strResult[1]);
+		if ($n > 0) { // 如果文章内包含有图片，就用第一张图片做为缩略图
+			echo '<img src="' . $strResult[1][0] . '" />';
+		} else { // 如果文章内没有图片，则用默认的图片。
+			echo '';
+		}
+	}
+}
+// 获取文章第一张缩略图 
+function catch_that_image()
+{
+	global $post;
+	$first_img = '';
+	ob_start();
+	ob_end_clean();
+	$output = preg_match_all('/<img*.+src=[\'"]([^\'"]+)[\'"].*>/iU', wp_unslash($post->post_content), $matches);
+	$first_img = $matches[1][0];
+	return $first_img;
+}
+
 ?>
