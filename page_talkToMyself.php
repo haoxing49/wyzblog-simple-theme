@@ -12,11 +12,11 @@ get_header();
 			while (have_posts()) {
 				the_post(); ?>
 				<div class="timeline-item">
-					<div class="timeline-img"></div>					
-					<div class="timeline-content">					
-								
+					<div class="timeline-img"></div>
+					<div class="timeline-content">
+
 						<div class="date"><?php the_time('Y年n月j日G:i'); ?></div>
-						<?php the_content(); ?>						
+						<?php the_content(); ?>
 					</div>
 				</div>
 		<?php }
@@ -24,5 +24,6 @@ get_header();
 
 	</div>
 </section>
-
+</div>
+</div>
 <?php get_footer(); ?>

@@ -285,7 +285,7 @@ Tags: two-columns, right-sidebar, blog
     .comment-list {
         background-color: #ffffff;
         padding: 20px;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
     
     .comment-list h3 {
@@ -345,11 +345,16 @@ Tags: two-columns, right-sidebar, blog
         width: 90%;
         margin: 5px 0 10px 0;
     }
+    
+    .comment-list li .comment-respond {
+        margin-top: 20px;
+    }
     /*评论表单*/
     
     .comment-respond {
         background-color: #ffff;
         padding: 20px;
+        margin-top: 70px;
     }
     
     .comment-respond h3 {
@@ -383,6 +388,7 @@ Tags: two-columns, right-sidebar, blog
         padding: 10px 0;
         text-align: center;
         background-color: #ffffff;
+        height: 50px;
     }
     
     .posts-nav .page-numbers {
