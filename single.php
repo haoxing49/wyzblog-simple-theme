@@ -2,7 +2,9 @@
 <!-- Column 1 /Content -->
 
 <?php if (have_posts()) : the_post();
-	update_post_caches($posts); ?>
+	update_post_caches($posts); 
+	setPostViews(get_the_ID());
+	?>
 	<div class="layui-col-md9 layui-col-lg9">
 		<!-- Blog Post -->
 		<div class="single-post">
@@ -15,6 +17,9 @@
 				</span>
 				<span>
 					<i class='layui-icon layui-icon-date'></i> <?php the_time('Y年n月j日') ?>
+				</span>
+				<span>
+				<i class="fa fa-eye" aria-hidden="true"></i> <?php echo getPostViews(get_the_ID());  ?>
 				</span>
 				<span>
 					<i class='layui-icon layui-icon-dialogue'></i> <?php comments_popup_link('0', '1', '%', '', '评论已关闭'); ?>

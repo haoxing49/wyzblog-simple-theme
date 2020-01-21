@@ -417,7 +417,9 @@ function get_ajax_posts()
 		'nopaging' => false,
 		'order' => 'DESC',
 		'orderby' => 'date',
-		'paged' => $_POST['page_now'] //获取当前页
+		'paged' => $_POST['page_now'], //获取当前页
+		'post_status' => 'publish',
+		'post_type' => 'post'
 	);
 	// The Query
 	$ajaxPosts = new WP_Query($args);
