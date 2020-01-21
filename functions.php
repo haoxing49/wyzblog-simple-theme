@@ -361,10 +361,10 @@ function is_has_image()
 		echo the_post_thumbnail();
 	} else { //如果文章没有设置缩略图，则查找文章内是否包含图片
 		$content = $post->post_content;
-		preg_match_all('/<img.*?(?: |\\t|\\r|\\n)?src=[\'"]?(.+?)[\'"]?(?:(?: |\\t|\\r|\\n)+.*?)?>/sim', $content, $strResult, PREG_PATTERN_ORDER);
+		preg_match_all('/<img.*?(?: |\\t|\\r|\\n)?lay-src=[\'"]?(.+?)[\'"]?(?:(?: |\\t|\\r|\\n)+.*?)?>/sim', $content, $strResult, PREG_PATTERN_ORDER);
 		$n = count($strResult[1]);
 		if ($n > 0) { // 如果文章内包含有图片，就用第一张图片做为缩略图
-			echo '<img src="' . $strResult[1][0] . '" />';
+			echo '<img lay-src="' . $strResult[1][0] . '" />';
 		} else { // 如果文章内没有图片，则用默认的图片。
 			echo '';
 		}
@@ -377,9 +377,64 @@ function catch_that_image()
 	$first_img = '';
 	ob_start();
 	ob_end_clean();
-	$output = preg_match_all('/<img*.+src=[\'"]([^\'"]+)[\'"].*>/iU', wp_unslash($post->post_content), $matches);
+	$output = preg_match_all('/<img*.+lay-src=[\'"]([^\'"]+)[\'"].*>/iU', wp_unslash($post->post_content), $matches);
 	$first_img = $matches[1][0];
 	return $first_img;
 }
 
+//获取阅读数
+function getPostViews($postID)
+{
+	$count_key = 'views';
+	$count = get_post_meta($postID, $count_key, true);
+	if ($count == '') {
+		delete_post_meta($postID, $count_key);
+		add_post_meta($postID, $count_key, '0');
+		return "0";
+	}
+	return $count;
+}
+//写入阅读数
+function setPostViews($postID)
+{
+	$count_key = 'views';
+	$count = get_post_meta($postID, $count_key, true);
+	if ($count == '') {
+		$count = 0;
+		delete_post_meta($postID, $count_key);
+		add_post_meta($postID, $count_key, '0');
+	} else {
+		$count++;
+		update_post_meta($postID, $count_key, $count);
+	}
+}
+
+
+function get_ajax_posts()
+{
+	// Query Arguments
+	$args = array(
+		'nopaging' => false,
+		'order' => 'DESC',
+		'orderby' => 'date',
+		'paged' => $_POST['page_now'] //获取当前页
+	);
+	// The Query
+	$ajaxPosts = new WP_Query($args);
+	$response = '';
+	// The Query
+	if ($ajaxPosts->have_posts()) {
+		while ($ajaxPosts->have_posts()) {
+			$ajaxPosts->the_post();
+			$response .= get_template_part('index', 'content');
+		}
+	} else {
+		$response .= get_template_part('none');
+	}
+	echo $response;
+	exit; // leave ajax call
+}
+// Fire AJAX action for both logged in and non-logged in users
+add_action('wp_ajax_get_ajax_posts', 'get_ajax_posts');
+add_action('wp_ajax_nopriv_get_ajax_posts', 'get_ajax_posts');
 ?>
