@@ -7,7 +7,7 @@
 				<input type="text" id="s" name="s" class="layui-input" required="" lay-verify="required" placeholder="输入关键字搜索">
 			</div>
 			<div class="layui-inline">
-				<button class="layui-btn layui-btn-sm layui-btn-primary"><i class="layui-icon layui-icon-search"></i></button>
+				<button class="layui-btn layui-btn-sm layui-btn-primary" onClick="if(document.forms['search'].searchinput.value=='- Search -')document.forms['search'].searchinput.value='';"><i class="layui-icon layui-icon-search"></i></button>
 			</div>
 		</form>
 	</div>

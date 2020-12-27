@@ -80,8 +80,7 @@ Tags: two-columns, right-sidebar, blog
         margin: 0 10px;
     }
     
-    .header .layui-nav .layui-nav-item:after,
-    .header .layui-nav .layui-nav-bar {
+    .header .layui-nav .layui-this:after {
         height: 1px;
         background-color: #1E9FFF;
     }
@@ -170,7 +169,7 @@ Tags: two-columns, right-sidebar, blog
         width: auto;
         height: auto;
         text-align: center;
-        background-color: rgba(30, 130, 255, .7);
+        background-color: rgba(255, 0, 0, .7);
     }
     
     .metacat a {
@@ -217,7 +216,7 @@ Tags: two-columns, right-sidebar, blog
     }
     
     .sidebar {
-        position: sticky;
+        position: sticky !important;
         position: -webkit-sticky;
         top: 60px;
     }
@@ -523,4 +522,8 @@ Tags: two-columns, right-sidebar, blog
             line-height: 50px;
             display: inline;
         }
+    }
+    
+    .div-hidden {
+        display: none;
     }

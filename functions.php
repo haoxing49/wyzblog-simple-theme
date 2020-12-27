@@ -342,6 +342,10 @@ function my_custom_init()
 	register_post_type('TalkAboutMood', $args);
 }
 
+//主题后台设置 2020年01月23日21:50:01
+require(get_template_directory() . '/inc/theme-options.php');
+
+//判断是否为管理员
 function wyzblog_is_admin($user_id)
 {
 	$user = get_userdata($user_id);
@@ -409,7 +413,7 @@ function setPostViews($postID)
 	}
 }
 
-
+//通过ajax方式获取文章
 function get_ajax_posts()
 {
 	// Query Arguments
@@ -428,7 +432,8 @@ function get_ajax_posts()
 	if ($ajaxPosts->have_posts()) {
 		while ($ajaxPosts->have_posts()) {
 			$ajaxPosts->the_post();
-			$response .= get_template_part('index', 'content');
+
+			$response .= get_template_part('index', 'AjaxContent');
 		}
 	} else {
 		$response .= get_template_part('none');

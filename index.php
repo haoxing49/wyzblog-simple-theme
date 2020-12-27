@@ -14,8 +14,8 @@
 		flow.load({
 			elem: '#ajaxpost', //指定列表容器
 			isAuto: 'false',
-			end:'<span>—— 这是我的底线 ——</span>',
-			isLazyimg:'true',
+			end: '<span>—— 你看光我的底线啦 ——</span>',
+			isLazyimg: 'true',
 			done: function(page, next) { //到达临界点（默认滚动触发），触发下一页 
 				//console.log(page);
 				$.ajax({
@@ -24,7 +24,7 @@
 					dataType: "html", // add data type
 					data: {
 						action: 'get_ajax_posts',
-						page_now: page//当前页
+						page_now: page //当前页
 					},
 					success: function(strOut) {
 						//console.log(strOut);	
